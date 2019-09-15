@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lyft-map-location-selection/precache-manifest.20960f875c9b66ef5448ac08d2716be2.js"
+  "/lyft-map-location-selection/precache-manifest.ade4b958d7ea32c9dd47914ef3e49271.js"
 );
 
 self.addEventListener('message', (event) => {

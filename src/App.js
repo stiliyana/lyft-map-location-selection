@@ -58,6 +58,12 @@ class App extends Component {
     const pinClassNames = classNames(classes.pin, {
       [classes.pinTravelling]: isTravelling
     })
+    const locationInputClassNames = classNames(classes.locationInput, {
+      [classes.locationInputDisabled]: isTravelling
+    })
+    const locationClassNames = classNames(classes.location, {
+      [classes.locationDisabled]: isTravelling
+    })
 
     return (
       <div className={classes.container}>
@@ -76,11 +82,12 @@ class App extends Component {
           ref={this.mapRef}
         />
         <div className={classes.locationContainer}>
-          <span className={classes.locationLabel}>Location</span>
-          <span className={classes.location}>
-            {(center && !isTravelling) && `${Number(center.lat).toFixed(4)}, ${Number(center.lng).toFixed(4)}`}
-            {(center && isTravelling) && 'Loading...'}
-          </span>
+          <div className={locationInputClassNames}>
+            <span className={classes.locationLabel}>Location</span>
+            <span className={locationClassNames}>
+              {`${Number(center.lat).toFixed(4)}, ${Number(center.lng).toFixed(4)}`}
+            </span>
+          </div>
         </div>
         <div className={classes.pinContainer} >
           <div className={pinClassNames} />
